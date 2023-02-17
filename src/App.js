@@ -7,6 +7,15 @@ import Inicio from "./components/Inicio";
 import Tienda from "./components/Tienda";
 
 const App = () => {
+
+  const productos = [
+    {id:1, nombre: "Producto 1"},
+    {id:2, nombre: "Producto 2"},
+    {id:3, nombre: "Producto 3"},
+    {id:4, nombre: "Producto 4"},
+]
+
+
   return (
     <Contenedor>
       <Menu>
@@ -19,7 +28,7 @@ const App = () => {
           <Route path="*" element={<Error404></Error404>}></Route>
           <Route path="/" element={<Inicio></Inicio>}></Route>
           <Route path="/blog" element={<Blog></Blog>}></Route>
-          <Route path="/tienda" element={<Tienda></Tienda>}></Route>
+          <Route path="/tienda" element={<Tienda productos={productos}></Tienda>}></Route>
         </Routes>
       </main>
       <aside>
