@@ -1,12 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import Blog from "./components/Blog";
+import Carrito from "./components/Carrito";
 import Error404 from "./components/Error404";
 import Inicio from "./components/Inicio";
 import Tienda from "./components/Tienda";
 
 const App = () => {
+
+  const [carrito, cambiarCarrito] = useState([
+  ])
 
   const productos = [
     {id:1, nombre: "Producto 1"},
@@ -32,7 +36,7 @@ const App = () => {
         </Routes>
       </main>
       <aside>
-        <h3>Sidebar</h3>
+        <Carrito carrito={carrito}></Carrito>
       </aside>
     </Contenedor>
   );
